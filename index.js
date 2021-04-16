@@ -12,12 +12,10 @@ connect.then(() => {
 
     console.log('Connected correctly to server');
 
-    const newCampsite = new Campsite({
+    Campsite.create({ //auto saves too
         name: 'React Lake Campground',
         description: 'test'
-    });
-
-    newCampsite.save()
+    })
     .then(campsite => {
         console.log(campsite);
         return Campsite.find(); //refers to the Model
